@@ -1,5 +1,13 @@
 name: terragrunt-modules-detection
-inputs: {}
+inputs:
+  targetRepositoryUrl:
+    description: The url of the repository to sync the environment stack to
+    required: true
+  gitToken:
+    description: The git token with the required permissions
+    required: true
 run:
   exec: |
-    gh --version
+    sudo apk add github-cli
+    npm i zx
+    npx zx $ENV0_PLUGIN_PATH/sync-environment-stack.mjs
