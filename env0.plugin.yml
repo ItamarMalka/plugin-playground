@@ -2,4 +2,4 @@ name: terragrunt-modules-detection
 inputs: {}
 run:
   exec: |
-    env
+    gh --version
